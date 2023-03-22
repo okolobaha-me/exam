@@ -20,7 +20,7 @@ export const Way = () => {
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={7.5}>
+      <Grid item xs={12} lg={7.5}>
         <Chart chartData={getChartData()} targetLine={getTargetLine()} />
         <Typography fontSize={21}>
           Am to target = {targetMeasures.angle}
@@ -30,7 +30,7 @@ export const Way = () => {
         </Typography>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={12} lg={4}>
         <Box sx={{ paddingTop: "20px" }}>
           <TextField
             sx={{ width: "70px", marginRight: "20px" }}
