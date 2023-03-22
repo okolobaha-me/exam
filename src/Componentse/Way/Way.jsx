@@ -1,9 +1,9 @@
-import {Dot} from "../Dot/Dot";
-import {Box, Button, Grid, List, TextField} from "@mui/material";
-import {ToastContainer} from "react-toastify";
+import { Dot } from "../Dot/Dot";
+import { Box, Button, Grid, List, TextField, Typography } from "@mui/material";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {Chart} from "../Chart/Chart";
-import {useWay} from "../../hooks/useWay";
+import { Chart } from "../Chart/Chart";
+import { useWay } from "../../hooks/useWay";
 
 export const Way = () => {
   const [
@@ -15,12 +15,19 @@ export const Way = () => {
     reset,
     recalculate,
     handleChangeStartPoint,
+    targetMeasures,
   ] = useWay();
 
   return (
     <Grid container spacing={1}>
       <Grid item xs={7.5}>
         <Chart chartData={getChartData()} targetLine={getTargetLine()} />
+        <Typography fontSize={21}>
+          Am to target = {targetMeasures.angle}
+        </Typography>
+        <Typography fontSize={21}>
+          Distance to target = {targetMeasures.dist}
+        </Typography>
       </Grid>
 
       <Grid item xs={4}>
